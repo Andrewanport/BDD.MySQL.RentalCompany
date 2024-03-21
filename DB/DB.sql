@@ -15,7 +15,7 @@ CREATE TABLE Veiculos (
     Aluguel_ID INT,	
     Agencia_ID INT,	
     Cliente_ID INT,
-	Categoria_ID INT,
+    Categoria_ID INT,
     Manutencao_ID INT,
     
     FOREIGN KEY (Reserva_ID) REFERENCES Reserva(Reserva_ID),
@@ -67,11 +67,11 @@ CREATE TABLE Reserva (
 
 CREATE TABLE Cliente (
 
-	/* Primary Key */
+    /* Primary Key */
     Cliente_ID INT AUTO_INCREMENT PRIMARY KEY,
 
-	/* Atributos */
-	Nome VARCHAR(255),
+    /* Atributos */
+    Nome VARCHAR(255),
     Telefone VARCHAR(15),
     Email VARCHAR(255),
     CNH VARCHAR(255),
@@ -83,8 +83,8 @@ CREATE TABLE Cliente (
     Reserva_ID INT,			
     
     /* Foreign Key */
-	FOREIGN KEY (Aluguel_ID) REFERENCES Aluguel(Aluguel_ID),
-	FOREIGN KEY (Endereco_ID) REFERENCES Endereco(Endereco_ID),
+    FOREIGN KEY (Aluguel_ID) REFERENCES Aluguel(Aluguel_ID),
+    FOREIGN KEY (Endereco_ID) REFERENCES Endereco(Endereco_ID),
     FOREIGN KEY (Veiculo_ID) REFERENCES Veiculo(Veiculo_ID),
     FOREIGN KEY (Reserva_ID) REFERENCES Reserva(Reserva_ID)
     
@@ -92,11 +92,11 @@ CREATE TABLE Cliente (
 
 CREATE TABLE Endereco (
 
-	/* Primary Key */
+    /* Primary Key */
     Endereco_ID INT AUTO_INCREMENT PRIMARY KEY,
 
-	/* Atributos */
-	Rua VARCHAR(255),
+    /* Atributos */
+    Rua VARCHAR(255),
     Numero VARCHAR(255),
     Complemento VARCHAR(255),
     Bairro VARCHAR(255),
@@ -108,11 +108,11 @@ CREATE TABLE Endereco (
 
 CREATE TABLE Multa (
 
-	/* Primary Key */
+    /* Primary Key */
     Multa_ID INT AUTO_INCREMENT PRIMARY KEY,
 
-	/* Atributos */
-	Infração VARCHAR(255),
+    /* Atributos */
+    Infracao VARCHAR(255),
     Data_Multa DATETIME,
     Valor_Multa DECIMAL(10,2),
     
@@ -121,7 +121,7 @@ CREATE TABLE Multa (
     Cliente_ID INT,			
     
     /* Foreign Key */
-	FOREIGN KEY (Aluguel_ID) REFERENCES Aluguel(Aluguel_ID),
+    FOREIGN KEY (Aluguel_ID) REFERENCES Aluguel(Aluguel_ID),
     FOREIGN KEY (Veiculo_ID) REFERENCES Veiculo(Veiculo_ID),
     FOREIGN KEY (Cliente_ID) REFERENCES Cliente(Cliente_ID)
     
@@ -129,27 +129,24 @@ CREATE TABLE Multa (
 
 CREATE TABLE Seguro (
 
-	/* Primary Key */
+    /* Primary Key */
     Seguro_ID INT AUTO_INCREMENT PRIMARY KEY,
 
-	/* Atributos */
-	Tipo_Seguro VARCHAR(255),
+    /* Atributos */
+    Tipo_Seguro VARCHAR(255),
     Valor_Premio VARCHAR(255),
     Periodo_Seguro DATETIME,
     
     Aluguel_ID INT,			
     
     /* Foreign Key */
-	FOREIGN KEY (Aluguel_ID) REFERENCES Aluguel(Aluguel_ID)
+    FOREIGN KEY (Aluguel_ID) REFERENCES Aluguel(Aluguel_ID)
     
 );
 
 CREATE TABLE Tipo_Pagamento (
 
-
-
-
-	/* Primary Key */
+    /* Primary Key */
     Tipo_Pagamento_ID INT AUTO_INCREMENT PRIMARY KEY,
     
     /* Atributos */
@@ -157,13 +154,13 @@ CREATE TABLE Tipo_Pagamento (
     
     Aluguel_ID INT,			
 
-	/* Foreign Key */
+    /* Foreign Key */
     FOREIGN KEY (Aluguel_ID) REFERENCES Aluguel(Aluguel_ID)
 );
 
 CREATE TABLE Funcionario (
 
-	/* Primary Key */
+    /* Primary Key */
     Funcionario_ID INT AUTO_INCREMENT PRIMARY KEY,
     
     /* Atributos */
@@ -185,7 +182,7 @@ CREATE TABLE Funcionario (
 
 CREATE TABLE Aluguel (
 
-	/* Primary Key */
+    /* Primary Key */
     Aluguel_ID INT AUTO_INCREMENT PRIMARY KEY,
     
     /* Atributos */
@@ -197,7 +194,7 @@ CREATE TABLE Aluguel (
 
 CREATE TABLE Agencia (
 
-	/* Primary Key */
+    /* Primary Key */
     Agencia_ID INT AUTO_INCREMENT PRIMARY KEY,
     
     /* Atributos */
@@ -210,7 +207,7 @@ CREATE TABLE Agencia (
     Funcionario_ID INT,			
     Veiculo_ID INT,			
 
-	/* Foreign Key */
+    /* Foreign Key */
     FOREIGN KEY (Endereco_ID) REFERENCES Endereco(Endereco_ID),
     FOREIGN KEY (Funcionario_ID) REFERENCES Funcionario(Funcionario_ID),
     FOREIGN KEY (Veiculo_ID) REFERENCES Veiculo(Veiculo_ID)
