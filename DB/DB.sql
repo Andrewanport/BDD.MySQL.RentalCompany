@@ -189,6 +189,5 @@ ALTER TABLE Seguro
     
     ADD COLUMN Aluguel_ID INT,
     
-    ADD FOREIGN KEY (Aluguel_ID) REFERENCES Aluguel(Aluguel_ID);
-    FOREIGN KEY (Veiculo_ID) REFERENCES Veiculo(Veiculo_ID)
-);
+    ADD FOREIGN KEY (Aluguel_ID) REFERENCES Aluguel(Aluguel_ID),
+    ADD FOREIGN KEY (Veiculo_ID) REFERENCES Veiculo(Veiculo_ID);
