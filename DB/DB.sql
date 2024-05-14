@@ -183,7 +183,6 @@ ALTER TABLE Multa
     ADD FOREIGN KEY (Cliente_ID) REFERENCES Cliente(Cliente_ID);
 
 ALTER TABLE Seguro
-    ADD COLUMN Tipo_Seguro VARCHAR(255),
     ADD COLUMN Valor_Premio VARCHAR(255),
     ADD COLUMN Periodo_Seguro DATETIME,
     
